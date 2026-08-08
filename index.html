@@ -220,7 +220,8 @@
   .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:start;}
   @media (max-width:860px){ .about-grid{grid-template-columns:1fr;gap:40px;} }
   .about-photo{position:relative;}
-  .about-photo img{width:100%;border:1px solid var(--rule-strong);}
+  .about-photo-frame{aspect-ratio:3/4;overflow:hidden;border:1px solid var(--rule-strong);}
+  .about-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
   .about-photo .cap{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.06em;color:var(--ink-faint);margin-top:10px;text-transform:uppercase;}
   .about-body p{color:var(--ink-dim);font-size:17.5px;margin:0 0 20px;}
   .about-body p:first-of-type{font-size:20px;color:var(--ink);}
@@ -234,8 +235,9 @@
   .show{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:start;padding:56px 0;border-top:1px solid var(--rule);}
   .show:first-of-type{border-top:none;padding-top:0;}
   @media (max-width:900px){ .show{grid-template-columns:1fr;gap:32px;} }
-  .show-media{position:relative;}
-  .show-media img{width:100%;border:1px solid var(--rule-strong);}
+  .show-media{position:relative;aspect-ratio:1/1;overflow:hidden;border:1px solid var(--rule-strong);}
+  .show-media img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;}
+  @media (min-width:901px){ .show-media{aspect-ratio:3/4;} }
   .show-tag{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);padding:4px 10px;margin-bottom:16px;}
   .show h3{font-size:clamp(30px,4vw,42px);line-height:0.96;margin-bottom:18px;}
   .show h3 .small{display:block;font-family:var(--font-body);font-weight:400;text-transform:none;font-style:italic;font-size:0.42em;letter-spacing:0;color:var(--ink-dim);margin-top:8px;}
@@ -431,7 +433,9 @@
     </div>
     <div class="about-grid">
       <div class="about-photo">
-        <img src="/images/portrait_new.webp" width="900" height="1351" alt="Fernando Mardones Salazar, caracterizado como El Aviador" loading="lazy" decoding="async" />
+        <div class="about-photo-frame">
+          <img src="/images/portrait_new.webp" width="900" height="1351" alt="Fernando Mardones Salazar, caracterizado como El Aviador" loading="lazy" decoding="async" />
+        </div>
         <div class="cap"><span class="es">Fernando Mardones Salazar — director y aviador</span><span class="en">Fernando Mardones Salazar — director &amp; aviator</span></div>
       </div>
       <div class="about-body">
